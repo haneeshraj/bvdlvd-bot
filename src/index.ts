@@ -2,6 +2,7 @@ import { Client, GatewayIntentBits, Partials } from 'discord.js';
 import { env } from './config/env';
 import commands from './commands';
 import { registerEvents } from './events';
+import { startKeepAlive } from './keep-alive';
 
 const client = new Client({
 	intents: [
@@ -23,6 +24,9 @@ registerEvents(client, commands);
 client.on('error', (err) => {
 	console.error('Client error:', err);
 });
+
+// Start keep-alive server for 24/7 uptime
+startKeepAlive();
 
 client.login(env.token).catch((err) => {
 	console.error('Login failed:', err);
