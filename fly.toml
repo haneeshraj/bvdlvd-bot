@@ -1,0 +1,14 @@
+# Fly.io configuration for BVDVD Bot
+app = "bvdvd-bot"
+primary_region = "lhr"  # London region (closest to UK)
+
+[build]
+  builder = "heroku"
+
+[env]
+  NODE_ENV = "production"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+  processes = ["app"]
