@@ -1,31 +1,17 @@
-# Build stage
-FROM node:22-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-
-# Install ALL dependencies including dev
-RUN npm install
-
-COPY . .
-
-# Build TypeScript
-RUN npm run build
-
-# Production stage
+# Use Node.js LTS
 FROM node:22-alpine
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm install --omit=dev
+# Install all dependencies
+RUN npm install
 
-# Copy built app from builder
-COPY --from=builder /app/dist ./dist
+# Copy source code
+COPY . .
 
-# Run the bot
-CMD ["node", "dist/index.js"]# Run the bot
+# Run the bot with tsx (no build step needed)
+CMD ["npm", "run", "dev"]# Run the bot
 CMD ["npm", "start"]
