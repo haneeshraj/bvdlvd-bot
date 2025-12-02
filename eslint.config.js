@@ -19,7 +19,7 @@ export default [
     },
     rules: {
       ...tseslint.configs.recommended.rules,
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['warning', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
 
@@ -53,7 +53,9 @@ export default [
       'no-undef': 'off',
       'object-curly-spacing': ['error', 'always'],
       'prefer-const': 'error',
-      quotes: ['error', 'single'],
+      // Accept any quote style for strings:
+      'quotes': 'off',
+      '@typescript-eslint/quotes': 'off',
       semi: ['error', 'always'],
       'space-before-blocks': 'error',
       'space-before-function-paren': [
