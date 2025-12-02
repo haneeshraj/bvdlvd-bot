@@ -1,8 +1,8 @@
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
-import { env } from './config/env';
-import commands from './commands';
-import { registerEvents } from './events';
-import { startKeepAlive } from './keep-alive';
+import { env } from './config/env.js';
+import commands from './commands/index.js';
+import { registerEvents } from './events/index.js';
+import { startKeepAlive } from './keep-alive.js';
 
 const client = new Client({
 	intents: [

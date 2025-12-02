@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, PermissionFlagsBits, TextChannel, EmbedBuilder } from 'discord.js';
-import type { Command } from '../types/command';
+import type { Command } from '../types/command.js';
 
 const EVENT_TIME = new Date('2025-12-04T20:00:00Z'); // Thursday 8PM UK time
 

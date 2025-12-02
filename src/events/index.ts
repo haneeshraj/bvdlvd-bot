@@ -1,8 +1,8 @@
 import { Collection, Events, type Client } from 'discord.js';
-import ready from './ready';
-import interactionCreate from './interactionCreate';
-import guildMemberAdd from './guildMemberAdd';
-import type { Command } from '../types/command';
+import ready from './ready.js';
+import interactionCreate from './interactionCreate.js';
+import guildMemberAdd from './guildMemberAdd.js';
+import type { Command } from '../types/command.js';
 
 export function registerEvents(client: Client, commands: Command[]): void {
 	const map = new Collection<string, Command>();

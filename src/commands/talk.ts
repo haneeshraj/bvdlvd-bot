@@ -1,7 +1,7 @@
 import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
-import type { Command } from '../types/command';
+import type { Command } from '../types/command.js';
 import { GoogleGenAI } from '@google/genai';
-import { env } from '../config/env';
+import { env } from '../config/env.js';
 
 const BVDLVD_ID = '516735642143555595';
 

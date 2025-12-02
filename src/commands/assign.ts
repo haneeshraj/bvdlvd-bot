@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, PermissionFlagsBits, GuildMember, TextChannel, EmbedBuilder } from 'discord.js';
-import type { Command } from '../types/command';
-import { CHANNEL_IDS, ROLE_IDS } from '../config/channels';
+import type { Command } from '../types/command.js';
+import { CHANNEL_IDS, ROLE_IDS } from '../config/channels.js';
 
 const FACTIONS = {
 	CLARITY: '☀️ Order of Clarity',
