@@ -6,14 +6,11 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install all dependencies
-RUN npm install
+# Install dependencies (production only)
+RUN npm ci --omit=dev
 
-# Copy source code
-COPY . .
-
-# Build TypeScript
-RUN npm run build
+# Copy pre-compiled code
+COPY dist ./dist
 
 # Run the bot
 CMD ["node", "dist/index.js"]
